@@ -89,7 +89,7 @@ class App extends Component {
             :
             <div>
             <div style={BgInner}>
-              <h2 style={heading}>Dark/light Mode Switcher</h2>
+              <h2 style={heading}>Dark/Light Mode Switcher</h2>
               <p style={{fontSize:'35px', paddingLeft:'20px', color:'#e8d8d8'}}>Toggle Me</p>
             </div>
             </div>
