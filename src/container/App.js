@@ -6,6 +6,7 @@ import './App.css';
 class App extends Component {
 
  state = {
+  //  boolean that determines the toggling
    isChange:false
  }
   
@@ -13,6 +14,7 @@ class App extends Component {
  
  changeBackground = () =>{
   const change = this.state.isChange;
+  // toggles the boolean
   this.setState({
     isChange: !change
   })
@@ -72,35 +74,30 @@ class App extends Component {
       color:'black',
       outline:'none'
     }
+
+   
+    // rendering components conditionally
+   let para = [];
+   if(this.state.isChange){
+     para.pop()
+     para.push('black-paragraph')
+   }else{
+    para.pop()
+    para.push('white-paragraph')
+   }
     return (
       
          
           <div style={this.state.isChange ? white:black}>
           <button style={this.state.isChange ? whiteBtn:blackBtn} onClick={()=> this.changeBackground()}>toggle me</button>
           <span className="fa fa-moon"></span>
-          {
-            this.state.isChange ?
-            <div>
-            <div style={Inner}>
+          <div>
+            <div style={this.state.isChange ? Inner : BgInner}>
               <h2 style={heading}>Dark/light Mode Switcher</h2>
-              <p style={{fontSize:'35px', paddingLeft:'20px', color:'#2d2d2d'}}>Toggle Me</p>
+              <p className={para}>Toggle Me</p>
             </div>
-            </div>
-            :
-            <div>
-            <div style={BgInner}>
-              <h2 style={heading}>Dark/Light Mode Switcher</h2>
-              <p style={{fontSize:'35px', paddingLeft:'20px', color:'#e8d8d8'}}>Toggle Me</p>
-            </div>
-            </div>
-          }
-          {/* toggle me color #797979 */}
-          {/* inner bg #252424 */}
-         
-
-
+          </div>
         </div>
-  
     );
   }
 }
