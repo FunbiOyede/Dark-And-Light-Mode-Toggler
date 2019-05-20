@@ -2,4 +2,4 @@
 
 ### Small react app to test dark and light mode switcher
 
-[incoming](https://www.incoming.com)
+[Mode Toggler](https://modetoggler.netlify.com/)
